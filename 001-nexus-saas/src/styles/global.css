@@ -1,0 +1,30 @@
+@import '@fontsource-variable/dm-sans/wght';
+@import '@fontsource/dm-serif-display/400';
+@import "tailwindcss";
+
+/* 🚀 Bloque especial para que Tailwind v4 cree tus clases automáticamente */
+@theme {
+    --color-primary: #0d0d0f;
+    --color-secondary: #C8F135;
+    
+    --color-text-primary: #aaaaaa;
+    --color-text-secondary: #8A8880;
+    
+    --font-primary: 'DM Sans Variable';
+    --font-secondary: 'DM Serif Display', serif;
+}
+
+
+/* La fuente primaria es heredada naturalmente por el body */
+body {
+    font-family: var(--font-primary);
+}
+
+.version::before {
+    content: '●';
+    padding-right: 0.5rem;
+    font-size: 8px;
+    /* width: 0; */
+    /* content: min-content; */
+    position: relative;
+}
