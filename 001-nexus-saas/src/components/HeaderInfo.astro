@@ -1,41 +1,59 @@
 ---
+import TrafficLights from './TrafficLights.astro';
+import TextFunc from './code-editor/TextFunc.astro';
+import KeyWords from './code-editor/KeyWords.astro';
+import Text from './code-editor/Text.astro';
+
+import MetricCard from './MetricCard.astro';
 ---
 
-<section class="h-dvh flex items-center px-12 gap-15">
-    <div>
-        <span class="border border-secondary text-secondary uppercase text-[12px] py-1.25 px-3.5 rounded-4xl bg-secondary/10 inline-flex items-center version">Nuevo — Pipeline AI v3.0</span>
-        <h1 class="text-[64px] leading-18 font-secondary"><span class="text-amber-50">Tu data,</span><br><span class="text-secondary">sin fricción.</span></h1>
-        <p>Nexus unifica todos tus flujos de datos en una plataforma inteligente. Sin ETL manual, sin código complejo. Solo insights en tiempo real.</p>
-        <a href="#">Probar gratis 14 días</a>
-        <a href="#">▶ Ver demo</a>
-    </div>
-    <div>
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
+<section class="min-h-[calc(100dvh-79px)] max-h-auto flex flex-wrap justify-between items-center gap-15 px-4 py-10 xs:px-12">
+    <div class="max-w-103 flex-1 xs:min-w-80">
+        <span class="border border-secondary/25 text-secondary uppercase text-[12px] py-1.25 px-3.5 rounded-4xl bg-secondary/10 inline-flex items-center gap-2 mb-7 version">
+            Nuevo — Pipeline AI v3.0
+        </span>
+
+        <h1 class="text-[64px] leading-17 font-secondary tracking-tight font-bold mb-7">
+            <span class="text-neutral-50 not-italic">Tu data,</span><br>
+            <em class="text-secondary">sin fricción.</em>
+        </h1>
+
+        <p class="text-olive-500 leading-7 mb-10">Nexus unifica todos tus flujos de datos en una plataforma inteligente. Sin ETL manual, sin código complejo. Solo insights en tiempo real.</p>
+        <div class="flex flex-wrap gap-4 font-medium">
+            <a href="#" class="bg-secondary py-3.5 px-8 rounded-sm hover:bg-lemon-hover transition ease-out">Probar gratis 14 días</a>
+            <a href="#" class="py-3.5 px-6 text-neutral-400 rounded-sm border border-neutral-400/25 hover:border-neutral-50 hover:text-neutral-50 transition ease-out">▶ Ver demo</a>
         </div>
-        <div>
-            <ol is:raw>
-                <li>// nexus.config.ts</li>
-                <li>import { Pipeline } from '@nexus/core'</li>
-                <li></li>
-                <li>const flow = new Pipeline ({</li>
-                <li>source: 'postgres://prod' ,</li>
-                <li>transform: ai.infer (),</li>
-                <li>sink: 'warehouse'</li>
-                <li>})</li>
+    </div>
+
+    <div class="bg-tertiary max-w-150 flex-1 rounded-xl border border-neutral-700/50 p-7 xs:min-w-85">
+        <div class="flex gap-x-1.25">
+            <TrafficLights class="bg-[#ff5f56]" />
+            <TrafficLights class="bg-[#ffbd2e]" />
+            <TrafficLights class="bg-[#27c93f]" />
+        </div>
+
+        <code>
+            <ol class="list-decimal text-[#666] text-[13px] w-full mt-5 pl-9">
+                <li class="text-[#444] my-1.5">
+                    // nexus.config.ts
+                </li>
+                <li class="my-1.5">
+                    <KeyWords keyword="import" /> {'{'} <TextFunc textFunc="Pipeline"/> {'}'} <KeyWords keyword="from" /> <Text text="'@nexus/core'" />
+                </li>
+                <li class="my-1.5"></li>
+                <li class="my-1.5">
+                    <KeyWords keyword="const" /> <TextFunc textFunc="flow" /> = <KeyWords keyword="new" /> <TextFunc textFunc="Pipeline" /> {'({'}
+                </li>
+                <li class="my-1.5">&nbsp source: <Text text="'postgres://prod'" /> ,</li>
+                <li class="my-1.5">&nbsp trasnform: <TextFunc textFunc="ai.infer" /> (),</li>
+                <li class="my-1.5">&nbsp sink: <Text text="'warehouse'" /></li>
+                <li class="my-1.5">{'})'}</li>
             </ol>
-            <div>
-                <span>LATENCIA P99</span>
-                <span>12ms</span>
-                <span>↓ 40% vs ayer</span>
-            </div>
-            <div>
-                <span>REGISTROS / SEG</span>
-                <span>2.4M</span>
-                <span>↑ en escala</span>
-            </div>
+        </code>
+        
+        <div class="flex flex-wrap gap-3 mt-5">
+            <MetricCard label="LATENCIA P99" val="12ms" delta="↓ 40% vs ayer" />
+            <MetricCard label="REGISTROS / SEG" val="2.4M" delta="↑ en escala" />
         </div>
     </div>
 </section>

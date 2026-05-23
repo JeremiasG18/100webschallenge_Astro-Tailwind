@@ -1,17 +1,20 @@
 @import '@fontsource-variable/dm-sans/wght';
-@import '@fontsource/dm-serif-display/400';
+@import '@fontsource/dm-serif-display/400.css';
+@import '@fontsource/dm-serif-display/400-italic.css';
 @import "tailwindcss";
 
 /* 🚀 Bloque especial para que Tailwind v4 cree tus clases automáticamente */
 @theme {
     --color-primary: #0d0d0f;
     --color-secondary: #C8F135;
-    
-    --color-text-primary: #aaaaaa;
-    --color-text-secondary: #8A8880;
+    --color-tertiary: #1A1A1F;
+    --color-lemon-hover: #A8D420;
+    /* --color-text-secondary: #8A8880; */
     
     --font-primary: 'DM Sans Variable';
     --font-secondary: 'DM Serif Display', serif;
+
+    --breakpoint-xs: 30rem; /* 480px */
 }
 
 
@@ -20,11 +23,25 @@ body {
     font-family: var(--font-primary);
 }
 
+/* Header */
+
 .version::before {
     content: '●';
-    padding-right: 0.5rem;
     font-size: 8px;
-    /* width: 0; */
-    /* content: min-content; */
-    position: relative;
+}
+
+code ol li::marker {
+    color: #333;
+    content: counter(list-item) '  ';
+}
+
+.show-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 4.90rem;
+    right: 0;
+    width: 100%;
+    background-color: var(--color-primary);
+    padding: 3rem;
 }

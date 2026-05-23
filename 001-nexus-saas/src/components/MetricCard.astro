@@ -1,0 +1,9 @@
+---
+const { label, val, delta } = Astro.props;
+---
+
+<div class="py-3.5 px-4 flex flex-col flex-1 min-w-35 text-[11px] bg-[#2f2f38]/70 rounded-lg border border-[#2f2f38]">
+    <span class="text-[#555] tracking-[0.66px] mb-1.5">{ label }</span>
+    <span class="text-[22px] text-secondary font-medium">{ val }</span>
+    <span class="text-[#3a8a3a] text-[11px]">{ delta }</span>
+</div>
