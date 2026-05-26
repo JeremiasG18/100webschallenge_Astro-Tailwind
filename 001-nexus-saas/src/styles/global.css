@@ -6,10 +6,11 @@
 /* 🚀 Bloque especial para que Tailwind v4 cree tus clases automáticamente */
 @theme {
     --color-primary: #0d0d0f;
-    --color-secondary: #C8F135;
+    --color-secondary: #F5F3EE;
     --color-tertiary: #1A1A1F;
+    --color-lemon: #C8F135;
     --color-lemon-hover: #A8D420;
-    /* --color-text-secondary: #8A8880; */
+    /* --color-text-lemon: #8A8880; */
     
     --font-primary: 'DM Sans Variable';
     --font-secondary: 'DM Serif Display', serif;
@@ -44,4 +45,19 @@ code ol li::marker {
     width: 100%;
     background-color: var(--color-primary);
     padding: 3rem;
+}
+
+#ticker {
+    position: relative;
+    animation: animated-ticker 50s linear infinite normal backwards;
+}
+
+@keyframes animated-ticker {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: -4551px;
+    }
 }

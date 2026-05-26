@@ -1,0 +1,11 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { className, iconName, title, description } = Astro.props;
+---
+
+<div class:list={['flex-1 py-10 px-9 bg-secondary hover:bg-primary group transition ease-out', className]}>
+    <Icon name={iconName} class="mb-6 w-12 h-12 p-2 bg-taupe-200 rounded-xl group-hover:bg-neutral-600 group-hover:text-neutral-100" />
+    <h3 class="font-secondary text-[22px] font-bold mb-3 group-hover:text-neutral-100">{title}</h3>
+    <p class="text-[14px] text-neutral-500">{description}</p>
+</div>

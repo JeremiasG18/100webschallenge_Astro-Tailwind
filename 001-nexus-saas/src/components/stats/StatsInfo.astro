@@ -1,0 +1,8 @@
+---
+const { statNum1, statNum2, description, className } = Astro.props;
+---
+
+<div class:list={['flex-1 min-w-60 flex flex-col gap-y-2 py-7 px-8 text-center', className]}>
+    <span class="text-5xl text-neutral-50 font-secondary">{statNum1}<span class="text-lemon">{statNum2}</span></span>
+    <span class="text-neutral-700 text-[13px] font-medium tracking-wider">{description}</span>
+</div>
