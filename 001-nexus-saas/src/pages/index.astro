@@ -1,6 +1,10 @@
 ---
+import CtaBand from '../components/CtaBand.astro';
 import Layout from '../layouts/Layout.astro';
+import About from '../sections/About.astro';
 import Header from '../sections/Header.astro';
+import How from '../sections/How.astro';
+import Prices from '../sections/Prices.astro';
 import Product from '../sections/Product.astro';
 ---
 
@@ -8,5 +12,9 @@ import Product from '../sections/Product.astro';
 	<Header />
 	<main>
 		<Product />
+		<How />
+		<About />
+		<Prices />
+		<CtaBand />
 	</main>
 </Layout>

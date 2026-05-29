@@ -1,0 +1,34 @@
+---
+import perfil1 from '../assets/perfil1.jpg';
+import perfil2 from '../assets/perfil2.jpg';
+import perfil3 from '../assets/perfil3.jpg';
+import ItemList from '../components/ItemList.astro';
+import ProfileCard from '../components/ProfileCard.astro';
+import Subtitle from "../components/Subtitle.astro";
+import Tag from "../components/Tag.astro";
+
+---
+
+<section class="py-25 px-4 xs:px-12 bg-secondary flex flex-col md:flex-row gap-10">
+    <section class="flex-1">
+        <Tag tag="SOBRE NOSOTROS" />
+        <Subtitle class="m-0" subtitle1="Construido por ingenieros," subtitle2="para ingenieros." />
+        <p class="text-neutral-500 text-[15px] leading-7 mb-10">Nacimos en 2020 con una obsesión: hacer que la infraestructura de datos deje de ser un dolor. Nuestro equipo viene de Stripe, Airbnb, y Palantir — sabemos de primera mano lo que cuesta escalar datos.</p>
+        <p class="text-neutral-500 text-[15px] leading-7 mb-10">Hoy somos más de 120 personas distribuidas en 14 países, con sede en Buenos Aires y oficinas en Nueva York y Amsterdam.</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+            <ProfileCard profilePhoto={perfil1} profileName="Lucía Mora" profileRole="CEO & Co-founder"
+            />
+            <ProfileCard profilePhoto={perfil2} profileName="Esteban Ríos" profileRole="CTO & Co-founder" />
+            <ProfileCard profilePhoto={perfil3} profileName="Mara Chen" profileRole="Head of Design" />
+        </div>
+    </section>
+    
+    <section class="flex-1">
+        <ol class="flex flex-col gap-10">
+            <ItemList number="01" title="Simplicidad radical" description="Si requiere más de tres pasos, lo simplificamos. La complejidad es nuestra responsabilidad, no la tuya." />
+            <ItemList number="02" title="Transparencia total" description="Sin letra chica. Pricing claro, SLAs públicos, status page en tiempo real. Sabés exactamente qué estás pagando y qué obtenés." />
+            <ItemList number="03" title="Obsesión por la performance" description="Medimos todo. Cada milisegundo importa. Nuestro equipo de SRE trabaja para que tus pipelines nunca fallen." />
+            <ItemList number="04" title="Open source primero" description="El core de Nexus es open source. Creemos en la comunidad. Si encontrás un bug, podés arreglarlo vos mismo." />
+        </ol>
+    </section>
+</section>

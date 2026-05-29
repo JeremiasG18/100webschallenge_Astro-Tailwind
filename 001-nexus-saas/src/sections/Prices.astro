@@ -1,0 +1,46 @@
+---
+import FeatureItem from "../components/FeatureItem.astro";
+import PlanCard from "../components/PlanCard.astro";
+import Subtitle from "../components/Subtitle.astro";
+import Tag from "../components/Tag.astro";
+---
+
+<section class="py-25 px-4 xs:px-12 bg-zinc-900">
+    <Tag tag="PRECIOS" />
+    <Subtitle class="text-neutral-50" subtitle1="Simple," subtitle2="Sin Sorpresas." />
+
+    <section>
+        <div class="flex flex-wrap gap-y-4">
+            <PlanCard class="bg-zinc-950/80" namePlan="STARTER" dollarSign="$" pricePlan="0" timePlan="/mes" forPlan="Para explorar y proyectos personales" textButton="Comenzar gratis">
+                <ul class="mb-6">
+                    <FeatureItem item="5 pipelines activos" />
+                    <FeatureItem item="1M eventos/mes" />
+                    <FeatureItem item="10 conectores" />
+                    <FeatureItem item="Retención 7 días" />
+                    <FeatureItem item="Soporte por email" />
+                </ul>
+            </PlanCard>
+            <PlanCard class="bg-zinc-800/70 border border-lemon/40" namePlan="PRO" dollarSign="$" pricePlan="299" timePlan="/mes" forPlan="Para equipos de datos en crecimiento" textButton="Empezar con Pro">
+                <ul class="mb-10">
+                    <FeatureItem item="Pipelines ilimitados" />
+                    <FeatureItem item="500M eventos/mes" />
+                    <FeatureItem item="Todos los conectores" />
+                    <FeatureItem item="Retención 90 días" />
+                    <FeatureItem item="IA integrada" />
+                    <FeatureItem item="SLA 99.9%" />
+                    <FeatureItem item="Soporte prioritario" />
+                </ul>
+            </PlanCard>
+            <PlanCard class="bg-zinc-950/80" namePlan="ENTERPRISE" pricePlan="Custom" forPlan="Para organizaciones con necesidades avanzadas" textButton="Hablar con ventas">
+                <ul class="mb-6">
+                    <FeatureItem item="Volumen ilimitado" />
+                    <FeatureItem item="Deployment on-premise" />
+                    <FeatureItem item="SSO & SCIM" />
+                    <FeatureItem item="SLA 99.99%" />
+                    <FeatureItem item="Customer Success dedicado" />
+                    <FeatureItem item="Contrato anual flexible" />
+                </ul>
+            </PlanCard>
+        </div>
+    </section>
+</section>

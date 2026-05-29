@@ -1,17 +1,19 @@
 ---
-import FeaturesCard from "../components/FeaturesCard.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+import Subtitle from "../components/Subtitle.astro";
+import Tag from "../components/Tag.astro";
 
 ---
 
 <section class="py-25 bg-secondary px-4 xs:px-12">
-    <span class="py-2 mb-3 inline-block font-medium text-[11px] text-neutral-700 border-t-2 tracking-[.12em]">PRODUCTO</span>
-    <h2 class="text-5xl font-secondary font-bold tracking-tight mb-17">Todo lo que necesitás, <br>nada que no.</h2>
+    <Tag tag="PRODUCTO" />
+    <Subtitle subtitle1="Todo lo que necesitás," subtitle2="nada que no."/>
     <div class="p-0.5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0.5 bg-[#dddbd4]">
-        <FeaturesCard class="border-2" iconName="bold" title="Ingesta instantánea" description="Conectá cualquier fuente en minutos. PostgreSQL, Kafka, S3, APIs REST. Nexus maneja la complejidad por vos." /> 
-        <FeaturesCard iconName="brain" title="Transformaciones con IA" description="Describí en lenguaje natural qué querés hacer con tus datos. Nexus genera y ejecuta el pipeline automáticamente." />
-        <FeaturesCard iconName="eye" title="Observabilidad total" description="Dashboards en tiempo real, alertas inteligentes y trazabilidad completa de cada registro en tu pipeline." />
-        <FeaturesCard iconName="security" title="Seguridad enterprise" description="SOC 2 Type II, cifrado en tránsito y en reposo, RBAC granular y auditoría completa de accesos." />
-        <FeaturesCard iconName="cloud" title="Multi-cloud nativo" description="Deployá en AWS, GCP o Azure. O en tu propia infraestructura. Nexus se adapta a tu arquitectura." />
-        <FeaturesCard iconName="connector" title="+200 conectores" description="Salesforce, Stripe, Snowflake, BigQuery, y mucho más. Tu ecosistema entero, conectado en un solo lugar." />
+        <FeatureCard iconName="bold" title="Ingesta instantánea" description="Conectá cualquier fuente en minutos. PostgreSQL, Kafka, S3, APIs REST. Nexus maneja la complejidad por vos." /> 
+        <FeatureCard iconName="brain" title="Transformaciones con IA" description="Describí en lenguaje natural qué querés hacer con tus datos. Nexus genera y ejecuta el pipeline automáticamente." />
+        <FeatureCard iconName="eye" title="Observabilidad total" description="Dashboards en tiempo real, alertas inteligentes y trazabilidad completa de cada registro en tu pipeline." />
+        <FeatureCard iconName="security" title="Seguridad enterprise" description="SOC 2 Type II, cifrado en tránsito y en reposo, RBAC granular y auditoría completa de accesos." />
+        <FeatureCard iconName="cloud" title="Multi-cloud nativo" description="Deployá en AWS, GCP o Azure. O en tu propia infraestructura. Nexus se adapta a tu arquitectura." />
+        <FeatureCard iconName="connector" title="+200 conectores" description="Salesforce, Stripe, Snowflake, BigQuery, y mucho más. Tu ecosistema entero, conectado en un solo lugar." />
     </div>
 </section>

@@ -1,0 +1,13 @@
+---
+const { class: className, namePlan, dollarSign, pricePlan, timePlan, forPlan, textButton } = Astro.props;
+---
+
+<div class:list={['text-neutral-500 py-10 px-8 w-full flex flex-col flex-1 min-w-60', className]}>
+    <span class="text-sm font-light tracking-widest mb-5">{namePlan}</span>
+    <div class:list={['mb-1 text-5xl text-neutral-50 font-secondary relative', dollarSign == "$" && 'px-3']}>
+        <span class="text-xl absolute left-0 top-0">{dollarSign}</span>{pricePlan}<span class="text-neutral-500 text-sm">{timePlan}</span>
+    </div>
+    <p class="font-light mb-7">{forPlan}</p>
+    <slot />
+    <a href="#" class:list={['p-3.5 text-center font-medium text-sm rounded-sm', namePlan != 'PRO' ? 'text-neutral-400 border border-neutral-800' : 'text-neutral-900 bg-lemon']}>{textButton}</a>
+</div>

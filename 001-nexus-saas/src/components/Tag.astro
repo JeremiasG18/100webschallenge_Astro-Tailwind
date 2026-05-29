@@ -1,0 +1,5 @@
+---
+const { class: className, tag } = Astro.props;
+---
+
+<span class:list={['py-2 mb-3 inline-block font-medium text-[11px] text-neutral-500 border-t-2 border-neutral-800 tracking-[.12em]', className]}>{tag}</span>

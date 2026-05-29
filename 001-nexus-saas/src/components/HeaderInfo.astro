@@ -1,10 +1,10 @@
 ---
-import TrafficLights from './TrafficLights.astro';
 import TextFunc from './code-editor/TextFunc.astro';
-import KeyWords from './code-editor/KeyWords.astro';
 import Text from './code-editor/Text.astro';
+import KeyWord from './code-editor/KeyWord.astro';
 
 import MetricCard from './MetricCard.astro';
+import TrafficLight from './TrafficLight.astro';
 ---
 
 <section class="min-h-[calc(100dvh-79px)] max-h-auto flex flex-wrap justify-between items-center gap-15 px-4 py-10 xs:px-12">
@@ -26,30 +26,30 @@ import MetricCard from './MetricCard.astro';
         </div>
     </div>
 
-    <div class="bg-tertiary max-w-150 flex-1 rounded-xl border border-neutral-700/50 p-7 xs:min-w-85">
+    <div class="bg-tertiary max-w-150 flex-1 min-w-30 rounded-xl border border-neutral-700/50 p-7 xs:min-w-85">
         <div class="flex gap-x-1.25">
-            <TrafficLights class="bg-[#ff5f56]" />
-            <TrafficLights class="bg-[#ffbd2e]" />
-            <TrafficLights class="bg-[#27c93f]" />
+            <TrafficLight class="bg-[#ff5f56]" />
+            <TrafficLight class="bg-[#ffbd2e]" />
+            <TrafficLight class="bg-[#27c93f]" />
         </div>
 
-        <code>
-            <ol class="list-decimal text-[#666] text-[13px] w-full mt-5 pl-9">
-                <li class="text-[#444] my-1.5">
-                    // nexus.config.ts
-                </li>
-                <li class="my-1.5">
-                    <KeyWords keyword="import" /> {'{'} <TextFunc textFunc="Pipeline"/> {'}'} <KeyWords keyword="from" /> <Text text="'@nexus/core'" />
-                </li>
-                <li class="my-1.5"></li>
-                <li class="my-1.5">
-                    <KeyWords keyword="const" /> <TextFunc textFunc="flow" /> = <KeyWords keyword="new" /> <TextFunc textFunc="Pipeline" /> {'({'}
-                </li>
-                <li class="my-1.5">&nbsp source: <Text text="'postgres://prod'" /> ,</li>
-                <li class="my-1.5">&nbsp trasnform: <TextFunc textFunc="ai.infer" /> (),</li>
-                <li class="my-1.5">&nbsp sink: <Text text="'warehouse'" /></li>
-                <li class="my-1.5">{'})'}</li>
-            </ol>
+        <code class="block overflow-x-auto">
+            <ol class="list-decimal text-[#666] text-[13px] w-max mt-5 pl-9">
+                    <li class="text-[#444] my-1.5">
+                        // nexus.config.ts
+                    </li>
+                    <li class="my-1.5">
+                        <KeyWord keyword="import" /> {'{'} <TextFunc textFunc="Pipeline"/> {'}'} <KeyWord keyword="from" /> <Text text="'@nexus/core'" />
+                    </li>
+                    <li class="my-1.5"></li>
+                    <li class="my-1.5">
+                        <KeyWord keyword="const" /> <TextFunc textFunc="flow" /> = <KeyWord keyword="new" /> <TextFunc textFunc="Pipeline" /> {'({'}
+                    </li>
+                    <li class="my-1.5">&nbsp source: <Text text="'postgres://prod'" /> ,</li>
+                    <li class="my-1.5">&nbsp trasnform: <TextFunc textFunc="ai.infer" /> (),</li>
+                    <li class="my-1.5">&nbsp sink: <Text text="'warehouse'" /></li>
+                    <li class="my-1.5">{'})'}</li>
+                </ol>
         </code>
         
         <div class="flex flex-wrap gap-3 mt-5">

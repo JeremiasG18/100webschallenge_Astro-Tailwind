@@ -2,12 +2,17 @@
 import Navbar from "../components/Navbar.astro";
 import HeaderInfo from "../components/HeaderInfo.astro";
 import Ticker from "../components/Ticker.astro";
-import Stats from "../components/Stats.astro";
+import Stat from "../components/Stat.astro";
 ---
 
 <header class="w-full bg-primary relative before:content-[''] bg-[radial-gradient(circle,rgba(200,241,53,0.08)_0%,transparent_70%)]">
     <Navbar />
     <HeaderInfo />
     <Ticker />
-    <Stats />
+    <section class="py-16 px-12 gap-y-5 flex flex-wrap justify-center">
+        <Stat class="border-none" statNum1="8" statNum2="B+" description="EVENTOS PROCESADOS/DÍA" />
+        <Stat statNum1="<15" statNum2="ms" description="LATENCIA P99 GLOBAL" />
+        <Stat statNum1="99" statNum2=".99%" description="UPTIME GARANTIZADO" />
+        <Stat statNum1="4" statNum2="K+" description="EMPRESAS QUE CONFÍAN EN NEXUS" />
+    </section>
 </header>

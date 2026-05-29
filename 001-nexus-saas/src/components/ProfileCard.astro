@@ -1,0 +1,12 @@
+---
+import { Image } from 'astro:assets';
+const { profilePhoto, profileName, profileRole } = Astro.props;
+---
+
+<div class="flex-1 flex flex-row sm:flex-col min-w-40 sm:min-w-0 bg-neutral-900 rounded-xl overflow-hidden shadow-xs shadow-neutral-600 w-40">
+    <Image class={'object-cover overflow-hidden h-27 w-25 sm:w-full sm:h-30'} src={profilePhoto} alt=`Imagen ${profileName}` />
+    <div class="flex flex-col p-3">
+        <span class="text-neutral-50 text-[15px] font-bold">{profileName}</span>
+        <span class="text-neutral-50 font-thin text-[13px]">{profileRole}</span>
+    </div>
+</div>

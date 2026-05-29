@@ -1,0 +1,17 @@
+---
+import StepCard from "../components/StepCard.astro";
+import Subtitle from "../components/Subtitle.astro";
+import Tag from "../components/Tag.astro";
+---
+
+<section class="py-25 px-4 xs:px-12 bg-primary">
+    <Tag tag="CÓMO FUNCIONA" />
+
+    <Subtitle class="text-neutral-50 mb-17" subtitle1="De la fuente al insight en" subtitle2="tres pasos."/>
+
+    <div class="bg-neutral-800 flex flex-wrap gap-px p-px">
+        <StepCard step="1" title="Conectá tus fuentes" description="Usá nuestros conectores pre-construidos o la API para traer datos desde cualquier sistema. Sin configuración compleja." />
+        <StepCard step="2" title="Definí tus reglas" description="Escribí las transformaciones en SQL, Python, o en lenguaje natural. Nexus AI sugiere optimizaciones automáticamente." />
+        <StepCard step="3" title="Activá y monitoreá" description="Tu pipeline corre en producción con SLA garantizado. Recibís alertas inteligentes antes de que haya problemas." />
+    </div>
+</section>

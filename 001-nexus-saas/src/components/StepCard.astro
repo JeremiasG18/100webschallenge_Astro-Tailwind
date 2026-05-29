@@ -1,0 +1,10 @@
+---
+const { step, title, description } = Astro.props;
+---
+
+<div class="py-12 px-9 relative bg-primary flex-1 min-w-full xs:min-w-70">
+    <span class="mb-6 text-neutral-600 text-7xl font-secondary inline-block">{step}</span>
+    <div class="w-2 h-2 bg-lemon rounded-full absolute right-9 top-12"></div>
+    <h3 class="mb-3 text-xl text-neutral-50">{title}</h3>
+    <p class="text-neutral-500 text-[14px]">{description}</p>
+</div>
