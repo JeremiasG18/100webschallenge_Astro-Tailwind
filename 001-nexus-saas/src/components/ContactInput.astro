@@ -1,0 +1,43 @@
+---
+const {class: className, label, inputType, relInput, placeholder} = Astro.props;
+const options = [
+    {
+        value: 1,
+        optionText: 'Demo del producto'
+    },
+    {
+        value: 2,
+        optionText: 'Consulta de pricing'
+    },
+    {
+        value: 3,
+        optionText: 'Soporte técnico'
+    },
+    {
+        value: 4,
+        optionText: 'Partnership'
+    },
+    {
+        value: 5,
+        optionText: 'Otro'
+    }
+];
+
+const classNames = 'py-3.5 px-4 text-sm bg-yellow-950/5 border border-neutral-300 rounded-sm';
+---
+
+<div class:list={['flex flex-col', className]}>
+    <label for={relInput} class="mb-2 text-xs text-neutral-500/60 tracking-wider">{label}</label>
+    
+    {inputType === 'textarea' ? (
+        <textarea class={`${classNames} min-h-30`} placeholder={placeholder} name={relInput} id={relInput}></textarea>
+    ) : inputType === 'select' ? (
+        <select class:list={['appearance-none', classNames]} name={relInput} id={relInput}>
+            {options?.map((option) => (
+                <option value={option.value}>{option.optionText}</option>
+            ))}
+        </select>
+    ) : (
+        <input class={classNames} type={inputType} placeholder={placeholder} name={relInput} id={relInput}>
+    )}
+</div> 

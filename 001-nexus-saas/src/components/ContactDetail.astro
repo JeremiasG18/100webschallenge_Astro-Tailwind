@@ -1,0 +1,13 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { iconName, data, info } = Astro.props;
+---
+
+<li class="py-4 flex gap-x-3 items-center border-b border-neutral-200">
+    <Icon name={iconName} class="w-6 h-6 text-neutral-500" />
+    <div>
+        <span class="text-neutral-600 text-xs tracking-wider">{data}</span>
+        <p class="text-sm">{info}</p>
+    </div>
+</li>

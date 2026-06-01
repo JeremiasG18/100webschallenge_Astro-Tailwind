@@ -1,0 +1,30 @@
+---
+import ContactDetail from "../components/ContactDetail.astro";
+import ContactInput from "../components/ContactInput.astro";
+import Subtitle from "../components/Subtitle.astro";
+import Tag from "../components/Tag.astro";
+---
+
+<section class="py-25 px-4 xs:px-12 bg-secondary flex flex-col md:flex-row flex-wrap gap-y-10 gap-x-20">
+    <section class="flex-1">
+        <Tag tag="CONTACTO" />
+        <Subtitle subtitle1="Hablemos." />
+        <p class="text-neutral-500 mb-4">Tenés preguntas sobre el producto, precios o querés una demo personalizada? Nuestro equipo responde en menos de 24 horas hábiles.</p>
+        <ul>
+            <ContactDetail iconName="email" data="EMAIL" info="hola@nexus.dev" />
+            <ContactDetail iconName="map" data="OFICINA PRINCIPAL" info="Buenos Aires, Argentina" />
+            <ContactDetail iconName="message" data="RESPUESTA PROMEDIO" info="Menos de 4 horas hábiles" />
+            <ContactDetail iconName="shake-hands" data="PARTNERSHIPS" info="partners@nexus.dev" />
+        </ul>
+    </section>
+    <section class="flex-1">
+        <form action="" class="grid gap-5 grid-cols-2">
+            <ContactInput class="col-span-2 xs:col-span-1 md:col-span-2 lg:col-span-1" label="NOMBRE" inputType="text" relInput="name" placeholder="Tu nombre" />
+            <ContactInput class="col-span-2 xs:col-span-1 md:col-span-2 lg:col-span-1" label="APELLIDO" inputType="text" relInput="lastname" placeholder="Tu apellido" />
+            <ContactInput class="col-span-2 xs:col-span-2 md:col-span-2 lg:col-span-2" label="EMAIL LABORAL" inputType="email" relInput="email" placeholder="Tu email" />
+            <ContactInput class="col-span-2 xs:col-span-2 md:col-span-2 lg:col-span-2" label="MOTIVO" inputType="select" relInput="reason" />
+            <ContactInput class="col-span-2 xs:col-span-2 md:col-span-2 lg:col-span-2" label="MENSAJE" inputType="textarea" relInput="message" placeholder="Contanos qué necesitás..." />
+            <input type="submit" value="Enviar mensaje" class="py-4 px-9 mt-5 col-span-2 xs:col-span-1 md:col-span-2 lg:col-span-1 bg-neutral-950 text-neutral-50 font-medium rounded-sm">
+        </form>
+    </section>
+</section>
