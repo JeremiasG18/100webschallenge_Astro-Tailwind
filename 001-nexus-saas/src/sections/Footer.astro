@@ -1,7 +1,7 @@
 ---
-import { Icon } from "astro-icon/components";
 import FooterTitleLinks from "../components/FooterTitleLinks.astro";
 import FooterLink from "../components/FooterLink.astro";
+import FooterSocial from "../components/FooterSocial.astro";
 ---
 
 <footer class="py-25 px-4 xs:px-12 bg-primary">
@@ -31,23 +31,16 @@ import FooterLink from "../components/FooterLink.astro";
                 <FooterLink linkText="Documentación" />
                 <FooterLink linkText="API Reference" />
                 <FooterLink linkText="Comunidad" />
-                <FooterLink linkText="Soporte" />
-                
+                <FooterLink linkText="Soporte" />                
             </ul>
         </section>
     </div>
     <section class="border-t border-neutral-500/30 text-neutral-500 text-sm flex flex-wrap items-center gap-x-4 py-4 justify-between">
-        <p class="mb-4">© 2025 Nexus Technologies Inc. · <a href="#">Privacidad</a> · <a href="#">Términos</a></p>
+        <p class="mb-4">© 2025 Nexus Technologies Inc. · <a href="#" class="hover:text-neutral-100 transition ease-out">Privacidad</a> · <a href="#" class="hover:text-neutral-100 transition ease-out">Términos</a></p>
         <div class="flex gap-2">
-            <a href="#" class="border border-neutral-500 rounded-sm p-0.5 text-2xl">
-                <Icon name={'brand-x'} />
-            </a>
-            <a href="#" class="border border-neutral-500 rounded-sm p-0.5 text-2xl">
-                <Icon name={'brand-linkedin'} />
-            </a>
-            <a href="#" class="border border-neutral-500 rounded-sm p-0.5 text-2xl">
-                <Icon name={'brand-github'} />
-            </a>
+            <FooterSocial nameIcon="brand-x" />
+            <FooterSocial nameIcon="brand-linkedin" />
+            <FooterSocial nameIcon="brand-github" />
         </div>
     </section>
 </footer>
