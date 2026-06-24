@@ -5,17 +5,31 @@ import logo from '../assets/logo-sinfondo.png';
 import { Icon } from 'astro-icon/components';
 ---
 
-<nav class="w-full py-2 flex justify-between items-center">
-    <Image src={logo} alt=`Logo de la empresa` class:list={'w-20'} />
-    
-    <ul class="flex gap-x-5">
-        <li><a href="#" class="text-neutral-200 p-3 rounded-sm hover:text-amber-300">Servicios</a></li>
-        <li><a href="#" class="text-neutral-200 p-3 rounded-sm hover:text-amber-300">Portfolio</a></li>
-        <li><a href="#" class="text-neutral-200 p-3 rounded-sm hover:text-amber-300">Contacto</a></li>
-    </ul>
-
-    <a class="text-neutral-200 p-3 rounded-md border border-neutral-50/70 flex gap-2 items-center hover:cursor-pointer hover:text-amber-300 hover:border-amber-300">
-        <Icon name={'message'} class="w-5 h-5" />
-        Solicitar cotización
+<nav class="w-full p-2 flex justify-between items-center bg-primary">
+    <a href="./">
+        <Image src={logo} alt='Logo de la empresa' class:list={'w-20'} />
     </a>
+    
+    <button class="cursor-pointer" id="toggle-btn" type="button">
+        <Icon name={'open-menu'} class="w-10 h-10 p-2 text-neutral-50 hover:text-amber-300" id={'open-menu'} />
+
+        <Icon name={'close-menu'} class="w-10 h-10 p-2 text-neutral-50 hover:text-amber-300 hidden" id={'close-menu'} />
+    </button>
+    
+    <button class="hover:cursor-pointer" id="toggle-btn" type="button" hidden>
+    </button>
+
+    <div class="bg-primary h-70 w-full p-4 invisible flex flex-col absolute top-21 left-0 items-center justify-between" hidden role="navigation" id="navbar">
+
+        <ul class="flex flex-col gap-y-5">
+            <li><a href="#" class="text-neutral-200 p-3 rounded-sm hover:text-amber-300">Servicios</a></li>
+            <li><a href="#" class="text-neutral-200 p-3 rounded-sm hover:text-amber-300">Portfolio</a></li>
+            <li><a href="#" class="text-neutral-200 p-3 rounded-sm hover:text-amber-300">Contacto</a></li>
+        </ul>
+    
+        <a class="text-neutral-200 p-3 rounded-md border border-neutral-50/70 flex gap-2 items-center hover:cursor-pointer hover:text-amber-300 hover:border-amber-300">
+            <Icon name={'message'} class="w-5 h-5" />
+            Solicitar cotización
+        </a>
+    </div>
 </nav>
