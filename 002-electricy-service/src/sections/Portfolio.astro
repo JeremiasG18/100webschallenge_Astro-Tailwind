@@ -1,0 +1,78 @@
+---
+import BtnCategoryService from "../components/BtnCategoryService.astro";
+import Subtitle from "../components/Subtitle.astro";
+import WorkCard from "../components/WorkCard.astro";
+import projects from '../data/projects.json';
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif,webp}');
+---
+
+<section class="bg-neutral-800 px-2 py-15 flex flex-col items-center">
+    <Subtitle subtitle="Portafolio" />
+    <p class="text-neutral-300 mb-7">Una muestra de instalaciones, reparaciones y proyectos eléctricos que hicimos en hogares y comercios.</p>
+    <section class="max-w-5xl">
+        <ul class="flex flex-wrap justify-center gap-3 mb-6">
+            <BtnCategoryService class="text-neutral-50 bg-neutral-900 border border-neutral-950" data_category="todos" textBtn="Todos" />
+            <BtnCategoryService data_category="residencial" textBtn="Residencial" />
+            <BtnCategoryService data_category="comercial" textBtn="Comercial" />
+            <BtnCategoryService data_category="energia-solar" textBtn="Energía solar" />
+            <BtnCategoryService data_category="seguridad" textBtn="Seguridad" />
+        </ul>
+        <section class="flex flex-wrap gap-3 justify-center">
+            { projects.map((project) => {
+                const imageMetadataFn = images[project.image_url];
+                // 3. Si no encuentra la ruta exacta, tiramos un error controlado para saber cuál falla
+                if (!imageMetadataFn) {
+                    throw new Error(`¡Error! No se encontró la imagen en la ruta: "${project.image_url}". Revisá tu JSON.`);
+                }
+                return (
+                    <WorkCard 
+                        class={project.category_color} 
+                        category={project.category}
+                        type={project.category_text}
+                        image={project.image_url} 
+                        descriptionImg={imageMetadataFn()}
+                        title={project.title} 
+                        description={project.description} 
+                    />
+                )
+            })}
+        </section>
+    </section>
+</section>
+
+<script>
+    const buttons = document.querySelectorAll('button[data-category]');
+    const cards = document.querySelectorAll('.card-project');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const buttonPicked = document.querySelector('button.bg-neutral-900');
+            button.classList.add('text-neutral-50');
+            button.classList.add('bg-neutral-900');
+            button.classList.add('border');
+            button.classList.add('border-neutral-950');
+            
+            buttonPicked?.classList.remove('text-neutral-50');
+            buttonPicked?.classList.remove('bg-neutral-900');
+            buttonPicked?.classList.remove('border');
+            buttonPicked?.classList.remove('border-neutral-950');
+            
+            buttonPicked?.classList.add('text-neutral-300');
+            buttonPicked?.classList.add('bg-neutral-700');
+            buttonPicked?.classList.add('border');
+            buttonPicked?.classList.add('border-neutral-400');
+            
+            const categoryChoice = button.getAttribute('data-category');
+            cards.forEach(card => {
+                const categoryCard = card.getAttribute('data-category');
+
+                if (categoryChoice === 'todos' || categoryCard === categoryChoice) {
+                    (card as HTMLElement).style.display = 'block';
+                } else {
+                    (card as HTMLElement).style.display = 'none';
+                }
+            });
+        });
+    });
+
+</script>

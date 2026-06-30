@@ -1,0 +1,16 @@
+---
+import Image from "astro/components/Image.astro";
+
+const { class: className, category, type, image, descriptionImg, title, description} = Astro.props;
+---
+
+<div class="grow shrink basis-70 max-w-90 flex flex-col bg-neutral-850 rounded-xl border border-neutral-500 overflow-hidden card-project" data-category={category}>
+    <div class="relative">
+        <Image src={image} alt={descriptionImg} class="object-cover h-55" width={400} height={400} />
+        <span class:list={["text-sm rounded-br-2xl font-medium absolute top-0 left-0 p-2", className]}>{type}</span>
+    </div>
+    <div class="p-3 bg-neutral-900 h-full">
+        <h3 class="text-neutral-50 font-medium mb-1">{title}</h3>
+        <p class="text-neutral-400">{description}</p>
+    </div>
+</div>

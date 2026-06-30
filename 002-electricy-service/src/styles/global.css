@@ -2,5 +2,8 @@
 
 @theme {
     --color-primary: #0c1b33;
+
     --font-primary: 'Poppins', sans-serif;
+    
+    --breakpoint-xs: 30rem;
 }

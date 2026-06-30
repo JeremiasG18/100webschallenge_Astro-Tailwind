@@ -2,18 +2,21 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<header class="h-dvh max-w-6xl font-primary">
+<header class="flex flex-col items-center font-primary bg-primary">
     <slot />
 
-    <section class="py-10 max-w-2/3">
-        <div class="w-100 py-1 px-3 border bg-amber-100/10 flex gap-x-3 items-center text-amber-300 rounded-full mb-6">
-            <Icon name={'shield-check'} class="w-5 h-5" /><p>
+    <!-- Se cambió max-h-150 por max-h-[600px] (o el valor en px que busques), se agregó min-h-0 y overflow-hidden -->
+    <section class="min-h-[calc(100dvh-98px)] overflow-hidden flex flex-col justify-center px-2 w-full max-w-5xl">
+
+        <div class="max-w-100 py-1 px-3 border bg-amber-100/10 grid grid-cols-[30px_minmax(20px,1fr)] items-center gap-x-1 text-amber-300 rounded-full mb-6">
+            <Icon name={'shield-check'} class="w-5 h-5" />
+            <p>
                 Electricista certificado · Más de 12 años de experiencia
-            </pass=>
+            </p>
         </div>
-        <h1 class="text-5xl font-medium text-neutral-300 max-w-65 leading-15 mb-6">Instalaciones eléctricas <span class="text-amber-300">seguras y confiables</span></h1>
-        <p class="text-neutral-300 mb-8">Servicio residencial y comercial. Presupuesto sin cargo y garantía en todos los trabajos.</p>
-        <div class="flex gap-4">
+        <h1 class="text-4xl font-medium text-neutral-300 max-w-65 leading-15 mb-6 xs:text-5xl">Instalaciones eléctricas <span class="text-amber-300">seguras y confiables</span></h1>
+        <p class="max-w-90 text-neutral-300 mb-8">Servicio residencial y comercial. Presupuesto sin cargo y garantía en todos los trabajos.</p>
+        <div class="flex flex-wrap gap-4">
             <a href="#" class="border border-neutral-50/70 text-neutral-50 rounded-md py-3 px-5 flex gap-2 items-center hover:text-amber-300 hover:border-amber-300">
                 <Icon name={'phone'} class="w-5 h-5" />
                 Llama ahora

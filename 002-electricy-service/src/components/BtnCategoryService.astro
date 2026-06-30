@@ -1,0 +1,6 @@
+---
+const { class: className, data_category, textBtn } = Astro.props;
+---
+
+
+<li><button class:list={["px-4 py-1 cursor-pointer text-neutral-300 bg-neutral-700 border border-neutral-400 rounded-full", className]} data-category={data_category} type="button">{textBtn}</button></li>

@@ -3,42 +3,55 @@ const openMenu = document.querySelector('#open-menu');
 const closeMenu = document.querySelector('#close-menu');
 const navbar = document.querySelector('#navbar');
 
+if (window.innerWidth >= 768) {
+    const isVisible = navbar?.hasAttribute('hidden');
+
+    if (isVisible) {
+        navbar.removeAttribute('hidden');
+        toggleBtn.setAttribute('hidden', '');
+    }
+}
+
+
 toggleBtn.addEventListener('click', () => {
     const isOpen = navbar?.hasAttribute('hidden');
     
     if (isOpen) {
         openMenu?.classList.add('hidden');
         closeMenu?.classList.remove('hidden');
-        navbar.removeAttribute('hidden');
-        navbar.classList.remove('invisible');
+
+        navbar?.removeAttribute('hidden');
+        
     }else{
         openMenu?.classList.remove('hidden');
         closeMenu?.classList.add('hidden');
-        navbar.setAttribute('hidden', '');
-        navbar.classList.add('visible');
-        console.log('adios');
+
+        navbar?.setAttribute('hidden', '');
     }
-    
 });
 
-// const navLinks = document.querySelector('#nav-links');
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+        const isVisible = navbar?.hasAttribute('hidden');
+        const toggleBtnIsVisible = toggleBtn?.hasAttribute('hidden');
 
-// toggleBtn?.addEventListener('click', () => {
-//     let isOpen = navLinks?.classList.contains('show-links');
+        if (!toggleBtnIsVisible) {
+            toggleBtn?.setAttribute('hidden', '');
+        }
 
-//     isOpen ? navLinks?.classList.remove('show-links') : navLinks?.classList.add('show-links');
-// });
+        if (isVisible) {
+            navbar.removeAttribute('hidden');
+        }
+    }
 
-// window.addEventListener('resize', () => {
-//     // let isOpen = navLinks?.classList.contains('show-links');
+    if (window.innerWidth < 768) {
+        const isVisible = toggleBtn?.hasAttribute('hidden');
+        navbar?.setAttribute('hidden', '');
+        openMenu.classList.remove('hidden');
+        closeMenu.classList.add('hidden');
 
-//     if (window.innerWidth.valueOf() <= 768) {
-//         toggleBtn.removeAttribute('hidden');
-
-//         // if (isOpen) {
-//         //     navLinks?.classList.remove('show-links')
-//         // }
-//     }else {
-//         toggleBtn.setAttribute('hidden', '');    
-//     }
-// });
+        if (isVisible) {
+            toggleBtn.removeAttribute('hidden');
+        }
+    }
+})

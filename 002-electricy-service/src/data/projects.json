@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "title": "Tablero eléctrico completo",
+    "description": "Renovación total de tablero en casa de dos plantas, Belgrano.",
+    "category": "residencial",
+    "image_url": "/src/assets/renovacion_tablero.webp",
+    "image_description": "Primer plano de un tablero eléctrico residencial con llaves térmicas y disyuntor bipolar nuevos.",
+    "category_text": "Residencial",
+    "category_color": "bg-sky-100 text-sky-800"
+  },
+  {
+    "id": 2,
+    "title": "Instalación trifásica industrial",
+    "description": "Montaje de tablero principal y distribución de fuerza motriz en taller mecánico.",
+    "category": "comercial",
+    "image_url": "/src/assets/trifasica_industrial.jpg",
+    "image_description": "Gabinete metálico industrial con acometida trifásica y selectores de fase digitales.",
+    "category_text": "Comercial",
+    "category_color": "bg-orange-100 text-yellow-800"
+  },
+  {
+    "id": 3,
+    "title": "Kit Solar Autoconsumo 5kW",
+    "description": "Instalación de paneles fotovoltaicos y luces LED perimetrales en casa de campo.",
+    "category": "energia-solar",
+    "image_url": "/src/assets/paneles_fotovoltaicos.jpg",
+    "image_description": "Estructura de aluminio con seis paneles solares monocristalinos orientados al norte en un techo de tejas.",
+    "category_text": "Energia Solar",
+    "category_color": "bg-green-100 text-green-800"
+  },
+  {
+    "id": 4,
+    "title": "Sistema de CCTV IP 4K",
+    "description": "Circuito cerrado de televisión con 8 cámaras perimetrales y monitoreo remoto para local.",
+    "category": "seguridad",
+    "image_url": "/src/assets/circuito-cerrado-de-television.jpg",
+    "image_description": "Cámara de seguridad tipo domo instalada en la marquesina exterior de un comercio.",
+    "category_text": "Seguridad",
+    "category_color": "bg-purple-100 text-indigo-800"
+  },
+  {
+    "id": 5,
+    "title": "Cableado estructurado de oficinas",
+    "description": "Puesta a punto de racks de comunicaciones, switches y tomacorrientes estabilizados.",
+    "category": "comercial",
+    "image_url": "/src/assets/cableado_estructurado.jpg",
+    "image_description": "Rack de redes de 19 pulgadas con cables de red categoría 6 organizados por colores.",
+    "category_text": "Comercial",
+    "category_color": "bg-orange-100 text-yellow-800"
+  },
+  {
+    "id": 6,
+    "title": "Automatización de portón y accesos",
+    "description": "Instalación de motor por cremallera rápida y cerradura electromagnética de seguridad.",
+    "category": "seguridad",
+    "image_url": "/src/assets/automatización_portones.jpg",
+    "image_description": "Motor automatizado de portón corredizo con su respectiva central electrónica de comando.",
+    "category_text": "Seguridad",
+    "category_color": "bg-purple-100 text-indigo-800"
+  },
+  {
+    "id": 7,
+    "title": "Iluminación sustentable para parque",
+    "description": "Colocación de reflectores solares con sensor de movimiento y fotocélula integrada.",
+    "category": "energia-solar",
+    "image_url": "/src/assets/reflector_solar.webp",
+    "image_description": "Reflector LED solar para intemperie encendido durante el atardecer iluminando un jardín.",
+    "category_text": "Energia Solar",
+    "category_color": "bg-green-100 text-green-800"
+  },
+  {
+    "id": 8,
+    "title": "Recableado estructural y puesta a tierra",
+    "description": "Cambio de cables antiguos de tela por normalizados y medición de jabalina en PH.",
+    "category": "residencial",
+    "image_url": "/src/assets/puesta_atierra.jpg",
+    "image_description": "Caja de inspección de puesta a tierra abierta mostrando el borne de conexión a la jabalina cobreada.",
+    "category_text": "Residencial",
+    "category_color": "bg-sky-100 text-sky-800"
+  },
+  {
+    "id": 9,
+    "title": "Alarma vecinal comunitaria",
+    "description": "Montaje de central de alarma de alta potencia con reflectores y activación por control remoto.",
+    "category": "seguridad",
+    "image_url": "/src/assets/alarma_vecinal.webp",
+    "image_description": "Sirena de alarma náutica instalada sobre un poste de luz en la vía pública.",
+    "category_text": "Seguridad",
+    "category_color": "bg-purple-100 text-indigo-800"
+  },
+  {
+    "id": 10,
+    "title": "Inversor híbrido y banco de baterías",
+    "description": "Sistema de respaldo de energía frente a cortes eléctricos para cadena de frío comercial.",
+    "category": "energia-solar",
+    "image_url": "/src/assets/reserva_baterias.png",
+    "image_description": "Inversor solar cargador montado en pared junto a un rack de baterías de litio.",
+    "category_text": "Energia Solar",
+    "category_color": "bg-green-100 text-green-800"
+  }
+]
