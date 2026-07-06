@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-sinfondo.png';
+import LinkSocial from '../components/LinkSocial.astro';
+---
+
+<footer class="bg-primary py-6 px-3 xs:px-10">
+    <section class="max-w-5xl m-auto flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+            <a href="./">
+                <Image src={logo} alt='Logo de la empresa' class:list={'w-20'} />
+            </a>
+            <p class="text-neutral-300"><span class="text-amber-300">Electro G</span> · 2026 © Todos los derechos reservados</p>
+        </div>
+        <p class="text-neutral-400"></p>
+        <div class="flex gap-4">
+            <LinkSocial icon={'whatsapp'} />
+            <LinkSocial icon={'tiktok'} />
+            <LinkSocial icon={'instagram'} />
+            <LinkSocial icon={'facebook'} />
+        </div>
+    </section>
+</footer>

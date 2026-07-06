@@ -7,7 +7,7 @@ import projects from '../data/projects.json';
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif,webp}');
 ---
 
-<section class="bg-neutral-800 px-2 py-15 flex flex-col items-center">
+<section class="bg-neutral-800 px-3 xs:px-10 py-15 flex flex-col items-center" id="portfolio">
     <Subtitle subtitle="Portafolio" />
     <p class="text-neutral-300 mb-7">Una muestra de instalaciones, reparaciones y proyectos eléctricos que hicimos en hogares y comercios.</p>
     <section class="max-w-5xl">

@@ -1,0 +1,114 @@
+---
+import Subtitle from "../components/Subtitle.astro";
+import ContactCard from "../components/ContactCard.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<section class="px-3 xs:px-10 py-15 bg-neutral-900" id="contact">
+    <div class="max-w-5xl m-auto flex flex-wrap justify-center gap-x-5 gap-y-10">
+        <section class="shrink grow basis-70 md:max-w-3/5 w-full">
+            <Subtitle subtitle="Contactanos" />
+            <p class="text-neutral-300 mb-6">Completá el formulario y te respondemos en menos de 2 horas con un presupuesto sin cargo.</p>
+            <ul class="flex flex-col gap-y-3">
+                <ContactCard icon="map-pin" info="Formosa Capital, Argentina" />
+                <ContactCard icon="clock" info="Lun-Sáb 8:00-20:00" />
+                <ContactCard icon="mail" info="electrog@gmail.com" />
+            </ul>
+        </section>
+        <section class="shrink grow basis-70  md:max-w-2/5 w-full">
+            <form class="p-7 flex flex-col text-neutral-300 bg-neutral-800 rounded-2xl" id="contact-form">
+                <label for="name" class="mb-2">Nombre y Apellido</label>
+                <input class="p-2 border border-neutral-600 rounded-md mb-5" type="text" name="name" id="name" placeholder="Juan García" required>
+
+                <label for="phone" class="mb-2">Teléfono o Correo</label>
+                <input class="p-2 border border-neutral-600 rounded-md mb-5" type="text" name="contact" id="phone" placeholder="+54 37..." required>
+
+                <label for="description" class="mb-2">Descripción del trabajo</label>
+                <textarea class="p-2 border border-neutral-600 rounded-md mb-5" name="description" id="description" placeholder="Contanos qué necesitás..." required></textarea>
+
+                <button class="text-neutral-100 p-2 flex gap-2 items-center justify-center border border-neutral-600 rounded-md cursor-pointer hover:bg-neutral-900" type="submit">
+                    <Icon name={'send'} class="w-5 h-5" />
+                    Enviar Consulta
+                </button>
+            </form>
+        </section>
+    </div>
+</section>
+
+
+<script>
+    import emailjs from '@emailjs/browser';
+
+    const contactForm = document.getElementById('contact-form');
+
+    emailjs.init({
+        publicKey: '2g4fDvaP0Jxa6brqI'
+    });
+
+    contactForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const form = e.target as HTMLFormElement;
+        const name = form.elements.namedItem('name') as HTMLInputElement;
+        const contact = form.elements.namedItem('contact') as HTMLInputElement;
+        const description = form.elements.namedItem('description') as HTMLTextAreaElement;
+        const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+        submitBtn.disabled = true;
+
+        const resp : string | boolean = validarFormulario(name.value, contact.value, description.value);
+
+        if (typeof resp === 'string') {
+            alert(resp);
+            submitBtn.disabled = false;
+            return;
+        }
+        
+        emailjs.sendForm('service_i8tqz9y', 'template_vm9c1cg', form)
+        .then(() => {
+            alert('Gracias por contactarnos!, en menos de 2 horas te responderemos.');
+            form.reset();
+            submitBtn.disabled = false;
+        }, (error) => {
+            console.log('Failed...', error);
+            alert('Hubo un error al enviar tu consulta. Por favor intentá de nuevo o contactanos por WhatsApp.');
+            submitBtn.disabled = false;
+        });
+    });
+
+    function validarFormulario(name : string, contact : string, description : string) : string | boolean {
+        if (!name || !contact || !description) {
+            return 'No se han completado todos los campos. Por favor rellene todos los campos solicitados!';
+        }
+
+        const regexName = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+(\s+[a-zA-ZáéíóúÁÉÍÓÚñÑ]+)+$/;
+
+        const cleanPhone = contact.replace(/[\s-]/g, '');
+        const regexPhone = /^(\+?54)?9?\d{10}$/;
+
+        const regexMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        const regexDescription = /^[\s\S]{10,500}$/;
+
+        if (name.length > 100 || name.length < 8) {
+            return 'El campo nombre y apellido debe tener entre 8 y 100 caracteres.';
+        }
+
+        if (!regexName.test(name.trim())) {
+            return 'Ingresa nombre y apellido válidos (ej: Juan García).';
+        }
+
+        const isPhone = regexPhone.test(cleanPhone);
+        const isMail = regexMail.test(contact.trim());
+
+        if (!isPhone && !isMail) {
+            return 'Ingresa un teléfono o correo electrónico válido.';
+        }
+
+        if (!regexDescription.test(description.trim())) {
+            return 'La descripción debe tener entre 10 y 500 caracteres.';
+        }
+
+        return true;
+    }
+
+</script>

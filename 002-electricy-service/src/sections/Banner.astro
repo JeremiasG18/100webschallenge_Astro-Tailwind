@@ -1,0 +1,22 @@
+---
+import { Icon } from "astro-icon/components";
+import Subtitle from "../components/Subtitle.astro";
+---
+
+<section class="bg-primary px-3 xs:px-10 py-10">
+    <section class="max-w-5xl m-auto">
+        <Subtitle subtitle="¿Necesitás un electricista en Formosa Capital?" />
+        <p class="text-neutral-300 mb-5">Escribinos y te programamos el turno</p>
+    
+        <section class="flex flex-wrap gap-3">
+            <div class="py-3 px-5 bg-slate-800 text-neutral-50 font-medium flex gap-x-2 items-center rounded-md border border-neutral-50/70">
+                <Icon name={'phone'} class="text-amber-400 w-5 h-5" />
+                <span>+54 3704 265311</span>
+            </div>
+            <a class="py-3 px-5 flex items-center gap-x-2 border text-neutral-50 border-neutral-50/70 rounded-md hover:text-amber-300 hover:border-amber-300" href="https://wa.me" target="_blank" rel="noopener noreferrer" >
+                <Icon name={'whatsapp'} class="w-5 h-5" />
+                WhatsApp
+            </a>
+        </section>
+    </section>
+</section>
